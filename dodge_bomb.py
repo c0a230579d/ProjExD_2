@@ -1,6 +1,7 @@
 import os
 import random
 import sys
+import time
 import pygame as pg
 
 
@@ -27,6 +28,17 @@ def check_bound(rct:pg.Rect) -> tuple[bool,bool]:
     if rct.top < 0 or HEIGHT < rct.bottom:
         tate = False
     return yoko,tate
+
+def game_over(screen:pg.Surface):
+    bg_img_nB = pg.image.load("fig/8.png") #こうかとん画像読み込み
+    fonto = pg.font.font(None,100)
+    txt = fonto.render("gameover",True,(255,255,255))
+    game_over.set_alpha(128)
+    screen.blit(game_over,(0,0))
+    screen.blit(txt,[WIDTH/2-200,HEIGHT/2])
+    screen.blit(bg_img_nB,[WIDTH/2-270,HEIGHT/2])
+    screen.blit(bg_img_nB,[WIDTH/2+270,HEIGHT/2])
+    pg.display.update()
 
 
 def main():
