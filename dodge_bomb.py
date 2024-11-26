@@ -30,7 +30,7 @@ def check_bound(rct:pg.Rect) -> tuple[bool,bool]:
     return yoko,tate
 
 def game_over(screen:pg.Surface):
-    bg_img_nB = pg.image.load("fig/8.png") #こうかとん画像読み込み
+    bg_img_nB = pg.image.load("fig/8.png")  # こうかとん画像読み込み
     fonto = pg.font.font(None,100)
     txt = fonto.render("gameover",True,(255,255,255))
     game_over.set_alpha(128)
